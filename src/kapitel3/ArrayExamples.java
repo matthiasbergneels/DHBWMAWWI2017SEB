@@ -5,7 +5,7 @@ public class ArrayExamples {
 	public static void main(String[] args) {
 		
 		
-		int numberArray[];				// Array Deklaration kenntlich durch eckige Klammern
+		int[] numberArray;				// Array Deklaration kenntlich durch eckige Klammern
 		
 		
 		numberArray = new int[5];
@@ -46,6 +46,13 @@ public class ArrayExamples {
 									{"Teller", "Tasse"},
 									{"Reifen", "Lenkrad", "Motor", "Scheibe"}
 								};
+		
+		System.out.println(textElements.length);
+		System.out.println(textElements[0].length);
+		System.out.println(textElements[1].length);
+		System.out.println(textElements[2].length);
+		
+		
 		
 		
 		
