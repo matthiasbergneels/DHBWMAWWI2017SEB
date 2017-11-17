@@ -11,8 +11,11 @@ public class FragezeichenOperator {
 		
 		boolean erg2 = !(a==b);
 		
+		boolean erg3 = a!=b;
+		
 		System.out.println("?: " + erg1);
 		System.out.println("!: " + erg2);
+		System.out.println("!=: " + erg3);
 		
 	}
 
