@@ -8,6 +8,7 @@ public class GGTAlt1 {
 		
 		while(x != y){
 			int erg = (x > y) ? (x -= y) : ( y -= x);
+			//System.out.println(erg);
 		}
 		
 		System.out.println("Der GGT ist " + x);

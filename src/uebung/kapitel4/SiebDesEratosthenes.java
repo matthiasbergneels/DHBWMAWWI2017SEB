@@ -19,6 +19,7 @@ public class SiebDesEratosthenes {
 		for(int i = 2; i < primzahlen.length; i++){
 			if(primzahlen[i]){
 				int x = i + i;
+				
 				while(x < primzahlen.length){
 					primzahlen[x] = false;
 					x = x + i;
