@@ -1,7 +1,5 @@
 package christmas;
 
-import java.awt.Color;
-
 import ch.aplu.turtle.Turtle;
 
 public class TurtleExample {

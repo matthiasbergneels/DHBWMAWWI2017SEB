@@ -1,0 +1,2 @@
+http://www.aplu.ch/home/download.jsp  
+http://www.java-online.ch/lego/turtleGrafik.php?inhalt_links=turtle/nav_turtleTu.inc.php&inhalt_mitte=turtle/benutzerinfos/lokaleIDE.inc.php
