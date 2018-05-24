@@ -11,12 +11,11 @@ public class Hotel implements Buchbar{
 	}
 
 	@Override
-	public boolean reservieren(int anz){
+	public void reservieren(int anz) throws NichtGenugFreiePlaetze{
 		if(anz < (this.anzahlZimmer - this.belegteZimmer)){
 			this.belegteZimmer += anz;
-			return true;
 		}else{
-			return false;
+			throw new NichtGenugFreiePlaetze(this.freiePlaetze(), anz);
 		}
 	}
 

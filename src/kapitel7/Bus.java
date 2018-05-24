@@ -12,7 +12,7 @@ public class Bus implements Buchbar, Tankbar{
 	}
 
 	@Override
-	public boolean reservieren(int anz) {
+	public void reservieren(int anz) throws NichtGenugFreiePlaetze {
 		if(anz <= this.freiePlaetze()){
 			for(int i = 0; i < this.sitzplaetze.length; i++){
 				if(!this.sitzplaetze[i]){
@@ -20,12 +20,13 @@ public class Bus implements Buchbar, Tankbar{
 					anz--;
 				}
 				if(anz <= 0){
-					return true;
+					return;
 				}
 			}
+		}else{
+			throw new NichtGenugFreiePlaetze(this.freiePlaetze(), anz);
 		}
 		
-		return false;
 	}
 
 	@Override
