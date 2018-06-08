@@ -1,0 +1,9 @@
+1.	Rekursive Sortieralgorithmen - Quicksort -- Gruppen: 5 & 10
+2.	UI Implementierung - JavaFX -- Gruppen: 2 & 7
+3.	Testen von Code - Unit Tests in Java -- Gruppen: 1 & 6
+4.	Einführungen in Web Anwendungen (API/UI) mit Java - Spring Boot -- Gruppen: 3 & 8
+5.	Funktionale Programmierung in Java - Lambda Funktionen -- Gruppen: 4 & 9
+
+Dauer pro Vortrag: 25 Minuten
+
+Fragen bitte per Email!
