@@ -1,13 +1,14 @@
 package kapitel9;
 
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.TreeSet;
 
-public class TreeSetBeispiel {
+public class StudentenListe {
 
 	public static void main(String[] args) {
 		
-		TreeSet<Student> studierendenListe = new TreeSet<Student>(new StudentenSortierer());
+		ArrayList<Student> studierendenListe = new ArrayList<Student>();
 		
 		studierendenListe.add(new Student(6728, "Klaus", "Mueller", 24));
 		studierendenListe.add(new Student(7283, "Gabi", "Schmidt", 26));
@@ -18,15 +19,21 @@ public class TreeSetBeispiel {
 		studierendenListe.add(new Student(9283, "Adam", "Goettlich", 256));
 		studierendenListe.add(new Student(6728, "Klaus", "Mueller", 24));
 		
-		System.out.println("Anzahl Studierende: " + studierendenListe.size());
-		
-		Iterator<Student> studierendenListeIterator = studierendenListe.iterator();
-		
-		while(studierendenListeIterator.hasNext()){
-			Student studierendes = studierendenListeIterator.next();
-			System.out.println(studierendes);
+		for(Student s : studierendenListe){
+			System.out.println(s);
 		}
 		
+		Collections.sort(studierendenListe);
+		System.out.println("Sortiert - natürliche Ordnung:");
+		for(Student s : studierendenListe){
+			System.out.println(s);
+		}
+		
+		Collections.sort(studierendenListe, new StudentenSortierer());
+		System.out.println("Sortiert - abartig Ordnung:");
+		for(Student s : studierendenListe){
+			System.out.println(s);
+		}
 
 	}
 
