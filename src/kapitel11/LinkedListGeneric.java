@@ -1,20 +1,18 @@
 package kapitel11;
 
-import kapitel9.Student;
-
 //import kapitel9.Student;
 
-public class LinkedList {
+public class LinkedListGeneric<V> {
 	
-	private Node firstNode = null;
+	private Node<V> firstNode = null;
 
-	public void add(Student student){
-		Node newNode = new Node(student);
+	public void add(V student){
+		Node<V> newNode = new Node<V>(student);
 		
 		if(firstNode == null){	
 			firstNode = newNode;
 		}else{
-			Node currentNode = firstNode;
+			Node<V> currentNode = firstNode;
 			while(currentNode.getNextNode() != null){
 				currentNode = currentNode.getNextNode();
 			}
@@ -22,13 +20,13 @@ public class LinkedList {
 		}
 	}
 	
-	public boolean remove(Student data){
+	public boolean remove(V data){
 		if(firstNode != null){
 			if(firstNode.getData().equals(data)){
 				firstNode = firstNode.getNextNode();
 				return true;
 			}else{
-				Node currentNode = firstNode;
+				Node<V> currentNode = firstNode;
 				while(currentNode.getNextNode() != null){
 					if(currentNode.getNextNode().getData().equals(data)){
 						currentNode.setNextNode(currentNode.getNextNode().getNextNode());
@@ -41,7 +39,8 @@ public class LinkedList {
 		
 		return false;
 	}
-
+	
+	/*
 	public Student remove(int matrikelNr){
 		
 		if(firstNode == null){
@@ -64,12 +63,13 @@ public class LinkedList {
 		}
 		return null;
 	}
+	*/
 	
 	public void printLinkedList(){
 		if(firstNode == null){
 			System.out.println("Die Liste ist leer!");
 		}else{
-			Node currentNode = firstNode;
+			Node<V> currentNode = firstNode;
 			do{
 				System.out.println(currentNode.getData());
 				currentNode = currentNode.getNextNode();
@@ -81,7 +81,7 @@ public class LinkedList {
 		printNode(firstNode);
 	}
 	
-	private void printNode(Node currentNode){
+	private void printNode(Node<V> currentNode){
 		if(currentNode == null){
 			return;
 		}else{
@@ -90,23 +90,23 @@ public class LinkedList {
 		}
 	}
 	
-	private class Node{
-		private Student data;
-		private Node nextNode;
+	private class Node<T>{
+		private T data;
+		private Node<T> nextNode;
 		
-		public Node(Student data){
+		public Node(T data){
 			this.data = data;
 		}
 		
-		public Node getNextNode(){
+		public Node<T> getNextNode(){
 			return nextNode;
 		}
 		
-		public void setNextNode(Node nextNode){
+		public void setNextNode(Node<T> nextNode){
 			this.nextNode = nextNode;
 		}
 		
-		public Student getData(){
+		public T getData(){
 			return this.data;
 		}
 	}

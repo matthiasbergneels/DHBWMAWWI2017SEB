@@ -60,8 +60,6 @@ public class VariableExamples {
 		sign = 111;
 		System.out.println(sign);
 		
-		
-		
 
 	}
 
