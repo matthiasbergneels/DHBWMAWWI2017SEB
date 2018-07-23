@@ -9,14 +9,65 @@ public class StudentTree {
 	public void insert(Student data){
 		Node newNode = new Node(data);
 		if(root != null){
-			// TODO
+			insert(root, newNode);
+			return;
 		}else{
 			this.root = newNode;
 		}
 	}
 	
+	private void insert(Node currentNode, Node newNode){
+		if(newNode.getData().compareTo(currentNode.getData()) < 0){
+			if(currentNode.getLeftNode() == null){
+				currentNode.setLeftNode(newNode);
+				return;
+			}else{
+				insert(currentNode.getLeftNode(), newNode);
+				return;
+			}
+		}else if(newNode.getData().compareTo(currentNode.getData()) > 0){
+			if(currentNode.getRightNode() == null){
+				currentNode.setRightNode(newNode);
+				return;
+			}else{
+				insert(currentNode.getRightNode(), newNode);
+				return;
+			}
+		}else{
+			return;
+		}
+		
+		
+	}
+	
 	public Student find(int matrikelNr){
-		// TODO
+		
+		if(root != null){
+			return find(root, matrikelNr);
+		}
+		
+		return null;
+	}
+	
+	private Student find(Node currentNode, int matrikelNr){
+		
+		if(currentNode.getData().getMatrikelNummer() == matrikelNr){
+			return currentNode.getData();
+		}else{
+			Student result = null;
+			if(currentNode.getLeftNode() != null){
+				 result = find(currentNode.getLeftNode(), matrikelNr);
+			}
+			
+			if(result != null){
+				return result;
+			}
+			
+			if(currentNode.getRightNode() != null){
+				return find(currentNode.getRightNode(), matrikelNr);
+			}
+		}
+		
 		return null;
 	}
 	

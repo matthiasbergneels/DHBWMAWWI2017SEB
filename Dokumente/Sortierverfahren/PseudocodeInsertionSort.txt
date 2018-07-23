@@ -1,0 +1,8 @@
+0. Methoden Signatur: int[] insertionSort(int[] array)
+1. Zählerschleife: für int i = 2. Stelle des Arrays solange i kleiner als Ende des Arrays, inkrementiere i um eins
+1.1 Zählerschleife: Für int j = i solange j größer 0, dekrementiere i um eins
+1.1.1 Vergleiche: Wert des Arrays an der Stelle i kleiner als Wert des Arrays an der Stelle i+1
+1.1.1.1 tausche Wert des Arrays an der Stelle i mit Wert des Arrays an der Stelle i+1
+1.1.2. sonst
+1.1.2.1 breche innere Schleife ab
+2. gib array zurück
